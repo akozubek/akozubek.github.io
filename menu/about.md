@@ -1,19 +1,13 @@
 ---
 layout: page
-title: Welcome to Lagrange!
+title: O mnie
 permalink: /about
 ---
 
-Lagrange is a minimalist Jekyll theme. The purpose of this theme is to provide a simple, clean, content-focused blogging platform for your personal site or blog. Below you can find everything you need to get started.
+Cześć!
 
-### Getting Started
+Skończyłam informatykę i&nbsp;matematykę na Uniwersytecie Warszawskim. Potem zrobiłam doktorat z teorii typów. To taki obszar wiedzy na pograniczu informatyki teoretycznej i logiki. (Formalnie: doktor nauk matematycznych w zakresie informatyki.)
 
-[Getting Started]({{ site.github.url }}{% post_url 2015-10-10-getting-started %}): getting started with installing Lagrange, whether you are completely new to using Jekyll, or simply just migrating to a new Jekyll theme.
+Mam 5 lat doświadczenia jako programista Javy.  Kolejne pracowałam 8 jako specjalista od baz danych, SQL-a, analizy danych i tworzenia treści. Ostatnio moje zainteresowania zawodowe dotyczą generatywnej sztucznej inteligencji (Gen AI), dużych modeli językowych (LLM) i wszystkiego, co z tym związane. 
 
-### Example Content
-
-[Text and Formatting]({{ site.github.url }}{% post_url 2014-01-01-text-formatting-examples %})
-
-### Questions?
-
-This theme is completely free and open source software. You may use it however you want, as it is distributed under the [MIT License](http://choosealicense.com/licenses/mit/). If you are having any problems, any questions or suggestions, feel free to [tweet at me](https://twitter.com/intent/tweet?text=My%question%about%Lagrange%is:%&amp;via=paululele), or [file a GitHub issue](https://github.com/lenpaul/lagrange/issues/new).
+W głębi serca jestem nauczycielem. Lubię uczyć i dzielić się wiedzą. Interesuje mnie wszystko, co dotyczy skutecznego uczenia -- zarówno siebie, jak i innych -- zwłaszcza z wykorzystaniem nowych technologii.
