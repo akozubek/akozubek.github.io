@@ -5,7 +5,7 @@ disqus:
 
 # If you are not using Google Analytics, please change 'google-ID' to an empty string
 #google-ID: 'UA-112060364-1'
-google-ID: ''
+google-ID: 'G-VHK997JMY9'
 
 menu:
 - {name: 'Strona główna',   url: ''}
