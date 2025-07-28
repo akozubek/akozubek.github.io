@@ -6,191 +6,66 @@ tags: [kurs,wizualizacja danych]
 image: czytelne-wykresy/chart-4.jpg
 ---
 
-W styczniu wzięłam udział w kursie Klaudii Stano [Czytelne wykresy w cztery tygodnie](https://jezykdanych.pl/czytelne-wykresy-kurs/). Jak można sie domyślic, kurs trwa cztery tygodnie.
 
-## O Klaudii
+W styczniu wzięłam udział w kursie Klaudii Stano [Czytelne wykresy w cztery tygodnie](https://jezykdanych.pl/czytelne-wykresy-kurs/). To kurs o tym, jak tworzyć czytelne, zrozumiałe i dobrze zaprojektowane wykresy. Nie skupia się na żadnym konkretnym narzędziu, tylko na uniwersalnych zasadach, które można zastosować niezależnie od używanego narzędzia.
 
-Kladia Stano, twórczyni kursu, jest polską popularyzatorką wizualizacji danych i dobrych praktyk wizualizacji danych. Klaudia jest bardzo aktywna w Internecie: prowadzi stronę [Język danych](https://jezykdanych.pl/), na której prowadzi blog o wizualizacji danych, prowadzi liczne kursy (online i offline), prowadzi newsletter i szkolenia w postaci webinarów. Oraz udziela się na LinkedInie.
-
-## Formuła kursu
-
-To jest kurs internetowy, ale różni się dość mocno od typowych kursów online na platformach typu Coursera czy Udemy. Dostajemy dostęp do platformy kursowej, ale także do Discorda dla kursu.
-
-Co tydzień dostajemy dostęp do kolejnej lekcji w formie wideo. Lekcja to kilka filmów na jeden temat, zwykle do godziny oglądania. Nie można przyspieszyć przechodzenia kursu - kolejne lekcje odblokowują się w kolejnych tygodniach.
-
-Po każdej lekcji dostajemy do zrobienia pracę domową. Praca domowa zwykle polega na przygotowaniu jakiegoś wykresu, który odnosi się do tematów poruszanych w lekcji. Pracę domową trzeba wrzucić na kanał na Discordzie. Każdą pracę domową Klaudia komentuje (komentować mogą też inni uczestnicy kursu).
-
-Dostep do materiałów dostajemy na określony czas (chyba pół roku od startu kursu), ale bez problemu można to przedłużyć.
-
-Gdy ja przechodziłam ten kurs, miał on formę "kohortową". Wszyscy zaczynali w tym samym momencie i w tym samym momencie przechodzili lekcje. Obecnie Klaudia "otworzyła" ten kurs i można zapisać się w dowolnym momencie. Nie wiem, jak funkcjonuje Discord.
-
-**Cena:** 429 zł
-
-## Zalety kursu
-
-Kurs jest po polsku! Przyzwyczaiłam się do internetowych kursów na po angielsku na Courserze i innym Udemy. Ale odbiór treści po polsku jest zupełnie inny. Fajnie jest posłuchać kogoś, kto mówi po polsku i odnosi treści do polskich realiów.
-
-Super jest bezpośredni kontakt z prowadzącą. To jest dość kameralny kurs w porównaniu z "Massive Online Open Courses". Klaudia jest obecna na Discordzie i odpowiada na pytania użytkowników, i daje personalizowany feedback. To ogromna odmiana w stosunku do masowych kursów na Courserze, gdzie nie ma prawdziwego kontaktu z prowadzącymi i grupą.
-
-Prace domowe, które trzeba pokazać "ludziom". Zauważyłam, że mam tendencję do robienia prac domowych w kursach połowicznie. Skoro wiem, jak skończyc, to zwykle nie kończę. tutaj trzeba skończyć, a przyanajmniej doprowadzić wykres do postaci, której nie wstydzimy się pokazać. To motywuje.  I Klaudia rzeczywiście ogląda nasze wykresy.
-
-Mnie się podoba forma pokazu. Klaudia jest bardzo autentyczna w swoich nagraniach. Widać, że pasjonuje się wizualizacją, podaje dużo przykładów. Przyjemnie jej się słucha. Widać, że opowiadanie o wizualizacji sprawia jej radość i ta radość się udziela (mnie).
-
-# Kurs zmusza do nauki
-
-Poznałam Klaudię "na żywo" i wiem, że ona też cierp na chorobę "chciałabym się wszystkiego nauczyć, i to jak najszybciej". Doświadczenia Klaudii z nauce widać w podejściu do kursu:
-- Dostęp na trzy miesiące - żeby nie przeciągać, że kurs zrobię "kiedyś". Mam deadline i muszę zrobić. (W razie potrzeby można dostęp do kursu wydłużyć)
-- Dostęp do wideo co tydzień. Nie można obejrzeć 4 lekcji w jeden dzień, bo nie ma do nich dostepu. To wymusza przemyślenie lekcji i zastosowanie wskazówek w pracy domowej.
-
-Prace domowe
-
-# Czego się nauczyłam
-
-To jest kurs dla początkujących, więc nie ma tu nie wiadomo jakich zaawansowanych technik wizualizacji. Raczej sformalizowanie/uporządkowanie dobryk praktyk przy tworzeniu wykresów. Klaudia podaje "reguły" tworzenia wykresów. Wiadomo, że nie trzeba ich przestrzegać, ale mogą być puktem wyjścia, a potem można je świadomie złamać.
-
-- Różnica między wykresem eksploatacyjnym i eksplanacyjnym
-- Nie wszystkie wykresy musza być dopracowane
-- Różne narzędzia, niekoniecznie programistyczne
-- Warto żeby wykresy miały tytuły, źródło danych, itp
-- Staranność, dokładność
-
-Pisanie po polsku. Zapomniałam, jak się pisze po polsku.
-
-Polecam. Jestem w trakcie kolejnego kursu. 
-
-Jestem w trakcie kursu "Dla Wkręconych" i tez mi się podoba.
-
-Oto propozycja lepszej, bardziej uporządkowanej struktury artykułu – same nagłówki:
-
----
-
-## Dlaczego ten kurs?
 
 ## Kim jest Klaudia Stano?
 
+Kladia Stano, twórczyni kursu, jest polską popularyzatorką wizualizacji danych i dobrych praktyk z nią związanych. Klaudia jest bardzo aktywna w Internecie: prowadzi stronę [Język danych](https://jezykdanych.pl/), na której tworzy bloga, oferuje kursy, wysyła newsletter i organizuje webinary. Regularnie publikuje też na LinkedInie.
+
+Klaudia oferuje mnóstwo darmowych materiałów: newletter, darmowy kurs [Jak nie tworzyć wykresów](https://jezykdanych.pl/bezplatny-kurs-mailowy/), blog, darmowe webinary. Możesz bardzo łatwo sprawdzić, czy jej styl nauczania Ci odpowiada. 
+
 ## Jak wygląda kurs?
 
-### Formuła i przebieg
+To jest kurs internetowy, ale dość mocno różni się od typowych kursów online na platformach typu Coursera czy Udemy. W ramach kursu dostajemy dostęp do platformy z materiałami wideo. Razem z kursem dostajemy też dostęp do kursowego Discorda, na którym są inni uczestnicy.
 
-### Prace domowe i społeczność
+Kurs trwa cztery tygodnie. Co tydzień odblokowuje się nowa lekcja w formie wideo. Lekcja to kilka filmów na jeden temat, zwykle do godziny oglądania. Nie można „przyspieszyć” przechodzenia kursu — kolejne lekcje odblokowują się w kolejnych tygodniach.
 
-### Cena i dostęp
+Po każdej lekcji dostajemy pracę domową. Zwykle polega na przygotowaniu wykresu związanego z tematami poruszanymi w lekcji. Pracę domową wrzuca się na odpowiedni kanał na Discordzie. Klaudia komentuje każdą pracę domową, komentować mogą też inni uczestnicy kursu.
+
+Gdy ja przechodziłam ten kurs, miał on formę „kohortową” — wszyscy zaczynali w tym samym momencie i w tym samym tempie przechodzili przez materiał. Obecnie Klaudia „otworzyła” kurs i można zapisać się w dowolnym momencie. Nie wiem, jak w tej formule funkcjonuje teraz Discord.
+
+Kurs kosztuje **429 zł**. Dostep do materiałów dostajemy na **trzy miesiące od startu kursu**, ale bez problemu można to przedłużyć, jeśli jest taka potrzeba.
 
 ## Co wyróżnia ten kurs?
 
-### Język polski i lokalny kontekst
+**Kurs jest po polsku!** Przyzwyczaiłam się do internetowych kursów po angielsku — na Courserze, Udemy czy innych platformach. Ale odbiór treści po polsku to zupełnie inne doświadczenie. Fajnie jest posłuchać kogoś, kto mówi staranną(!) polszczyzną i odnosi się do polskich realiów.
 
-### Kontakt z prowadzącą
+**Bezpośredni kontakt z prowadzącą i grupą** to kolejna duża zaleta. Kurs jest dość kameralny, szczególnie w porównaniu z typowymi masowymi kursami internetowymi. Klaudia aktywnie udziela się na Discordzie, odpowiada na pytania, daje spersonalizowany feedback. To ogromna różnica w porównaniu z kursami, gdzie nie ma realnego kontaktu ani z prowadzącymi, ani z grupą. Można też obejrzeć prace innych uczestników kursu, co też jest inspirujące i motywujące.
 
-### Motywacja przez pokazanie pracy
+**Prace domowe, które trzeba pokazać „ludziom”.** Zauważyłam, że w kursach online często robię zadania tylko do połowy. Jeśli wiem, jak coś skończyć, to rzadko naprawdę kończę. Tutaj trzeba doprowadzić wykres do postaci, której nie wstyd pokazać innym. To motywuje. I Klaudia rzeczywiście te wykresy ogląda.
 
-### Styl prowadzenia i autentyczność
+**Forma przekazu też mi się podoba.** Klaudia jest bardzo autentyczna w swoich nagraniach. Widać, że naprawdę pasjonuje się wizualizacją — podaje dużo przykładów, opowiada z entuzjazmem. Przyjemnie się jej słucha. Ta **radość** z opowiadania o wykresach naprawdę się udziela (mnie na pewno).
+
 
 ## Co wyniosłam z kursu?
 
-### Praktyczne lekcje
+To kurs podstawowy, więc nie znajdziemy tu zaawansowanych technik wizualizacji. Raczej chodzi o uporządkowanie dobrych praktyk i sformalizowanie tego, co często robimy intuicyjnie. Klaudia podaje konkretne reguły tworzenia wykresów — nie po to, żeby się ich kurczowo trzymać, ale żeby mieć punkt wyjścia. Jeśli zajdzie taka potrzeba, można je świadomie złamać.
 
-### Kluczowe pojęcia i dobre praktyki
+* **Różnica między wykresem eksploracyjnym a eksplanacyjnym.**
+  Wcześniej nie zwracałam na to uwagi, a to bardzo ważne — inne cele, inne oczekiwania.
 
-## Dla kogo jest ten kurs?
+* **Nie wszystkie wykresy muszą być dopracowane.**
+  Wykresy robocze tworzone podczas eksploracji danych nie muszą być "na pokaz". Podobnie te, które pokazuję współpracownikom na roboczym spotkaniu też nie muszą być idealnie dopieszczone. I to jest w porządku.
 
-## Czy warto? Moja opinia
+* **Wizualizacja nie musi być zrobiona w jednym narzędziu.**
+  Można przygotować wykres w jednym programie, a tytuły czy podpisy dodać gdzie indziej. Dla mnie jako programisty to było odkrycie. Nie wszystko musi być zakodowane od początku do końca w jednym skrypcie, mogę coś zrobić ręcznie. I to nadal jest OK.
 
-## PS. Kurs „Dla Wkręconych” też jest super!
+* **Dobre praktyki — o których łatwo zapomnieć.**
+  Tytuły, podtytuły, źródła danych, wyjaśnienia — niby oczywistości, a jednak często je pomijam. Ten kurs pomógł mi sobie to wszystko uporządkować.
 
----
+* **Staranność i dokładność mają znaczenie.**
+  Klaudia przypomniała mi, jak ważna jest uważność w tym, co tworzymy. W czasach bylejakości i zalewu AI-generated content to było bardzo odświeżające.
 
-Jeśli chcesz, mogę też dopasować treść do tej struktury.
+* **Pisanie po polsku.**
+  Zapomniałam, jak się pisze po polsku. Przez ostatnie osiem lat większość treści „dla ludzi” tworzyłam po angielsku. Ten kurs to był dobry powrót do pisania po polsku i z polskiej perspektywy.
 
-Świetnie, w takim razie oto struktura w stylu „obiektywnej recenzji z osobistym komentarzem” – przejrzysta, rzeczowa, ale z miejscem na Twoje doświadczenia:
+## Czy warto? 
 
----
+Ja się świetnie bawiłam. Polecam!
 
-Oczywiście! Oto alternatywna struktura, bardziej w stylu osobistej recenzji, z większym naciskiem na Twoje doświadczenia i emocje:
-
----
-v2
-
-## Wprowadzenie: Dlaczego zapisałam się na kurs?
-
-## Pierwsze wrażenia
-
-## Kurs tydzień po tygodniu – jak to wygląda w praktyce
-
-### Materiały i tempo nauki
-
-### Prace domowe i społeczność
-
-## Co najbardziej mi się podobało?
-
-### Styl Klaudii
-
-### Feedback i interakcja
-
-### Motywacja i poczucie postępu
-
-## Czego się nauczyłam?
-
-### Nowe pojęcia i uporządkowana wiedza
-
-### Najważniejsze zasady, które zapamiętam
-
-## Czy kurs jest dla Ciebie?
-
-### Dla kogo będzie idealny
-
-### Kto może się rozczarować
-
-## Moja ogólna ocena
-
-## PS. Już robię kolejny kurs u Klaudii
-
----
-
-Chcesz wersję bardziej ekspercką (np. dla czytelników szukających obiektywnej recenzji) albo bardziej osobistą i blogową (np. styl „z dziennika kursantki”)?
-
-
-v3
-
-## 1. O kursie w skrócie
-
-Krótki opis: kto prowadzi, ile trwa, czego dotyczy, dla kogo jest.
-
-## 2. Program i przebieg
-
-Jak wygląda struktura kursu (tygodnie, lekcje, prace domowe), dostęp do materiałów, platforma, Discord itp.
-
-## 3. Forma nauki
-
-Jakie są metody dydaktyczne? Jak wygląda kontakt z prowadzącą? Czy kurs jest bardziej teoretyczny czy praktyczny?
-
-## 4. Co działa dobrze (moim zdaniem)
-
-Lista rzeczy, które zasługują na wyróżnienie – z przykładami i osobistym komentarzem.
-
-## 5. Co mogłoby być lepsze
-
-Ewentualne ograniczenia kursu, rzeczy, które Ci przeszkadzały lub mogą nie pasować wszystkim.
-
-## 6. Czego się nauczyłam
-
-Najważniejsze umiejętności i wiedza wyniesiona z kursu. Praktyczne przykłady.
-
-## 7. Dla kogo jest ten kurs?
-
-Profil uczestnika, który najwięcej zyska. I kto raczej nie powinien się zapisywać.
-
-## 8. Cena i dostępność
-
-Ile kosztuje, czy warto za tę cenę, jak długo ma się dostęp, jak często kurs jest dostępny.
-
-## 9. Podsumowanie i opinia końcowa
-
-Czy polecasz? Komu? Czy warto przejść inne kursy Klaudii?
-
----
-
-Mam też wersję z punktami jako pytania, jeśli wolisz styl recenzencki „Q\&A”. Chcesz taką wersję?
+Obecnie jestem w trakcie kolejnego kursu, [Wykresy dla wkręconych](https://jezykdanych.pl/wykresy-dla-wkreconych/) — i też bardzo mi się podoba.
 
 
 
