@@ -27,4 +27,35 @@ Ta instrukcja dotyczy **Visual Studio Code** i **Pythona**. Planuję spisać tu 
 - **Makefile Tools** – ułatwia pracę z Makefile. Wykrywa cele (targets), umożliwia ich uruchamianie z poziomu VS Code, integruje się z terminalem.
 
 
+# Mój plik settings.json
+
+Tak wygląda mój `settings.json` na komputerze nr 1:
+
+```json
+{
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.diagnosticMode": "workspace",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.pytestParameters": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+}
+```
+
+Co to znaczy:
+
+- `"python.languageServer": "Pylance"` – Pylance jako language server.
+- `"python.analysis.diagnosticMode": "workspace"` – diagnostyka działa na całym workspace (a nie tylko na otwartym pliku!). Prawie jak kompilator.
+- `"python.analysis.typeCheckingMode": "standard"` – sprawdzanie typów na średnim poziomie restrykcyjności.
+- `"python.analysis.autoImportCompletions": true`  – automatyczne podpowiedzi importów, gdy korzystam z niezaincludowanych jeszcze modułów.
+- `"python.analysis.autoFormatStrings": true`  – automatyczne formatowanie f-stringów i stringów.
+- `"python.analysis.inlayHints.functionReturnTypes": true`  – podpowiedzi typów zwracanych przez funkcje.
+- `"python.analysis.inlayHints.variableTypes": true`  – podpowiedzi typów zmiennych.
+- `"python.analysis.inlayHints.callArgumentNames": "all"` – przy wywołaniach funkcji pokazuje nazwy argumentów.
+- `"python.analysis.inlayHints.pytestParameters": true` – specjalne inlay hints dla parametrów w testach **pytest**.
+- `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter ustawiony na **autopep8**, żeby kod zawsze był zgodny z PEP 8.
 
