@@ -42,7 +42,8 @@ Tak wygląda mój `settings.json` na komputerze nr 1:
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.callArgumentNames": "all",
     "python.analysis.inlayHints.pytestParameters": true,
-    "editor.defaultFormatter": "ms-python.autopep8"
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.wordWrap": "on" 
 }
 ```
 
@@ -58,4 +59,5 @@ Co to znaczy:
 - `"python.analysis.inlayHints.callArgumentNames": "all"` – przy wywołaniach funkcji pokazuje nazwy argumentów.
 - `"python.analysis.inlayHints.pytestParameters": true` – specjalne inlay hints dla parametrów w testach **pytest**.
 - `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter ustawiony na **autopep8**, żeby kod zawsze był zgodny z PEP 8.
+- `"editor.wordWrap": "on"` – zawijanie linii w edytorze.
 
