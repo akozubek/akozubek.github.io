@@ -16,7 +16,7 @@ Ta instrukcja dotyczy **Visual Studio Code** i **Pythona**. Planuję spisać tu 
 
 - **Python** – podstawowe rozszerzenie od Microsoftu, które dodaje obsługę Pythona w VS Code: uruchamianie kodu, debugowanie, integracja z interpreterem, wirtualne środowiska.
 - **Pylance** – silnik analizy kodu od Microsoftu. Daje szybkie podpowiedzi IntelliSense, sprawdzanie typów, ostrzeżenia, podpowiadanie docstringów. Zdecydowanie poprawia komfort pisania kodu.
-- **autopep8** – automatyczne formatowanie kodu zgodnie z PEP 8. 
+- **autopep8** – automatyczne formatowanie kodu zgodnie z PEP 8. (Do zmiany?)
 - **Python Indent** – usprawnia zarządzanie wcięciami w Pythonie. VS Code czasem potrafi się pogubić przy blokach kodu – to rozszerzenie pilnuje poprawnych poziomów wcięć.
 - **Jupyter** – pozwala otwierać, edytować i uruchamiać notebooki Jupyter (`.ipynb`) bezpośrednio w VS Code. Bardzo wygodne przy prototypowaniu, analizie danych czy testowaniu fragmentów kodu.
 
@@ -29,35 +29,78 @@ Ta instrukcja dotyczy **Visual Studio Code** i **Pythona**. Planuję spisać tu 
 
 # Mój plik settings.json
 
-Tak wygląda mój `settings.json` na komputerze nr 1:
+Połączony plik `settings.json` z dwóch komputerów:
+
+```jsonc
+{
+    // osobiste preferencje
+    "editor.wordWrap": "on" 
+    "python.analysis.diagnosticMode": "workspace",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+
+    // pozostałe ustawienia
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "editor.defaultFormatter": "ms-python.autopep8",
+}
+```
+
+Osobiste preferencje:
+
+- `"editor.wordWrap": "on"` – zawijanie linii w edytorze. Bo tak lubię. 
+- `"python.analysis.diagnosticMode": "workspace"` – diagnostyka działa na całym workspace (a nie tylko na otwartym pliku!). Kluczowe. W użyciu z linterami zapewnie sprawdzanie całego projektu w trakcie edycji. 
+- `"python.terminal.activateEnvInCurrentTerminal: true"` – przy otwieraniu terminala w VS Code automatycznie aktywuje się środowisko wirtualne. (Potencjalnie do wyrzucenia, jeśli przesiądę się na `poetry`?)
+- `"python.analysis.autoFormatStrings": true`  – dodaje `f` przed stringiem, gdy dodam w środku zmienną.
+- `"python.analysis.typeCheckingMode": "standard"` – sprawdzanie typów na średnim poziomie restrykcyjności.
+- `"python.analysis.inlayHints.functionReturnTypes": true`  – podpowiedzi typów zwracanych przez funkcje.
+- `"python.analysis.inlayHints.callArgumentNames": "all"` – przy wywołaniach funkcji pokazuje nazwy argumentów.
+
+Inne ustawienia:
+- `"python.languageServer": "Pylance"` – Pylance jako language server. Chyba nie do uniknięcia? Do zbadania, jak to się ma do innych narzędzi okołopythonowych (typu lintery).
+- `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter ustawiony na **autopep8**. Pewnie do zmiany, bo Internet poleca inne formattery.
+- `"python.analysis.autoImportCompletions": true` – automatyczne podpowiedzi importów, gdy korzystam z modułów jeszcze niezaimportowanych.
+- `"python.analysis.inlayHints.pytestParameters": true` – specjalne inlay hints dla parametrów w testach **pytest**.
+
+<!--
 
 ```json
 {
     "python.languageServer": "Pylance",
+    "python.analysis.languageServerMode": "full",
     "python.analysis.typeCheckingMode": "standard",
     "python.analysis.diagnosticMode": "workspace",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoFormatStrings": true,
+
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.callArgumentNames": "all",
     "python.analysis.inlayHints.pytestParameters": true,
-    "editor.defaultFormatter": "ms-python.autopep8",
-    "editor.wordWrap": "on" 
+
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
 }
 ```
 
-Co to znaczy:
 
-- `"python.languageServer": "Pylance"` – Pylance jako language server.
-- `"python.analysis.diagnosticMode": "workspace"` – diagnostyka działa na całym workspace (a nie tylko na otwartym pliku!). Prawie jak kompilator.
-- `"python.analysis.typeCheckingMode": "standard"` – sprawdzanie typów na średnim poziomie restrykcyjności.
-- `"python.analysis.autoImportCompletions": true`  – automatyczne podpowiedzi importów, gdy korzystam z niezaincludowanych jeszcze modułów.
-- `"python.analysis.autoFormatStrings": true`  – automatyczne formatowanie f-stringów i stringów.
-- `"python.analysis.inlayHints.functionReturnTypes": true`  – podpowiedzi typów zwracanych przez funkcje.
-- `"python.analysis.inlayHints.variableTypes": true`  – podpowiedzi typów zmiennych.
-- `"python.analysis.inlayHints.callArgumentNames": "all"` – przy wywołaniach funkcji pokazuje nazwy argumentów.
-- `"python.analysis.inlayHints.pytestParameters": true` – specjalne inlay hints dla parametrów w testach **pytest**.
-- `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter ustawiony na **autopep8**, żeby kod zawsze był zgodny z PEP 8.
-- `"editor.wordWrap": "on"` – zawijanie linii w edytorze.
+
+* **`python.analysis.languageServerMode: "full"`**
+  → Pylance działa w trybie pełnym (pełna analiza całego workspace).
+
+
+* **`[python].editor.defaultFormatter: "ms-python.autopep8"`**
+  → **autopep8** jako domyślny formatter dla plików `.py`.
+
+-->
+
+
 
