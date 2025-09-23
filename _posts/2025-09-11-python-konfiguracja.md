@@ -40,14 +40,19 @@ Połączony plik `settings.json` z dwóch komputerów:
     "python.analysis.autoFormatStrings": true,
     "python.analysis.typeCheckingMode": "standard",
     "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.callArgumentNames": "all",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    "workbench.editor.closeOnFileDelete": true`,
 
     // pozostałe ustawienia
     "python.languageServer": "Pylance",
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
-    "editor.defaultFormatter": "ms-python.autopep8",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    }
 }
 ```
 
@@ -60,12 +65,15 @@ Osobiste preferencje:
 - `"python.analysis.typeCheckingMode": "standard"` – sprawdzanie typów na średnim poziomie restrykcyjności.
 - `"python.analysis.inlayHints.functionReturnTypes": true`  – podpowiedzi typów zwracanych przez funkcje.
 - `"python.analysis.inlayHints.callArgumentNames": "all"` – przy wywołaniach funkcji pokazuje nazwy argumentów.
+- `"workbench.editor.enablePreview": false` – każdy plik otwiera się w nowej karcie, zamiast w trybie podglądu, nadpisując bieżącą kartę.
+- `"workbench.editor.enablePreviewFromCodeNavigation": false` – pliki otwarte np. przez "Go to Definition" trafiają do normalnej karty, a nie do trybu podglądu.
+- `"workbench.editor.closeOnFileDelete": true` – karta automatycznie zamyka się, gdy plik zostanie usunięty z dysku.
 
 Inne ustawienia:
-- `"python.languageServer": "Pylance"` – Pylance jako language server. Chyba nie do uniknięcia? Do zbadania, jak to się ma do innych narzędzi okołopythonowych (typu lintery).
-- `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter ustawiony na **autopep8**. Pewnie do zmiany, bo Internet poleca inne formattery.
+- `"python.languageServer": "Pylance"` – Pylance jako language server. Standard. (Choć w nowszych wersjach VS Code nie ma tego w `settings.json`.)
 - `"python.analysis.autoImportCompletions": true` – automatyczne podpowiedzi importów, gdy korzystam z modułów jeszcze niezaimportowanych.
 - `"python.analysis.inlayHints.pytestParameters": true` – specjalne inlay hints dla parametrów w testach **pytest**.
+- `"editor.defaultFormatter": "ms-python.autopep8"` – domyślny formatter dla Pythona ustawiony na **autopep8**. Pewnie do zmiany, bo Internet poleca inne formattery.
 
 <!--
 
