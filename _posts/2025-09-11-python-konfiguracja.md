@@ -44,7 +44,7 @@ Połączony plik `settings.json` z dwóch komputerów:
     "python.analysis.inlayHints.callArgumentNames": "all",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromCodeNavigation": false,
-    "workbench.editor.closeOnFileDelete": true`,
+    "workbench.editor.closeOnFileDelete": true,
 
     // pozostałe ustawienia
     "python.languageServer": "Pylance",
