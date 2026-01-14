@@ -1,0 +1,10 @@
+Cześć, przesyłam moją pracę domową nr 4. Ze względu na moje zainteresowania zawodowe zajęłam się dużymi modelami językowymi i ich zużyciem energii. 
+
+Wytrenowanie modelu GPT-3 pochłonęło około 1,3 GWh energii. To tyle, ile zużywa 520 przeciętnych gospodarstw domowych w Polsce w ciągu roku. Innymi słowy, wytrenowanie tego (już nie najnowszego) modelu wymagało tyle energii, ile przez rok zużywa 5 dziesięciopiętrowych bloków z 10 mieszkaniami na każdym piętrze.
+(Przyjęłam, że przeciętne gospodarstwo domowe w Polsce zużywa około 2500 kWh rocznie.)
+
+Jeden prompt w ChatGPT zużywa około 0,4 Wh – to tyle, ile 10-watowa żarówka LED potrzebuje na 2,5 minuty świecenia.
+
+ChatGPT otrzymuje ponad miliard zapytań dziennie – to około 11 500 na sekundę. Gdyby jedna osoba zadawała 100 pytań dziennie, zajęłoby jej ponad 2700 lat, żeby zadać miliard pytań.
+
+Zużycie energii przez ChatGPT przy miliardzie zapytań dziennie wynosi około 400 MWh. To tyle, ile zużywa 160 przeciętnych gospodarstw domowych w Polsce przez cały rok.
