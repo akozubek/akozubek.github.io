@@ -12,7 +12,7 @@ Teraz jestem jedyną osobą w firmie programującą w Pythonie, więc jestem zda
 
 Ta instrukcja dotyczy **Visual Studio Code** i **Pythona**. Planuję spisać tu rozszerzenia, ustawienia i inne drobiazgi, które sprawiają, że praca idzie szybciej i wygodniej. To wersja robocza, którą z czasem będę rozwijać o kolejne elementy.
 
-# Rozszerzenia Visual Studio Code dla Pythona
+## Rozszerzenia Visual Studio Code dla Pythona
 
 - **Python** – podstawowe rozszerzenie od Microsoftu, które dodaje obsługę Pythona w VS Code: uruchamianie kodu, debugowanie, integracja z interpreterem, wirtualne środowiska.
 - **Pylance** – silnik analizy kodu od Microsoftu. Daje szybkie podpowiedzi IntelliSense, sprawdzanie typów, ostrzeżenia, podpowiadanie docstringów. Zdecydowanie poprawia komfort pisania kodu.
@@ -20,14 +20,14 @@ Ta instrukcja dotyczy **Visual Studio Code** i **Pythona**. Planuję spisać tu 
 - **Python Indent** – usprawnia zarządzanie wcięciami w Pythonie. VS Code czasem potrafi się pogubić przy blokach kodu – to rozszerzenie pilnuje poprawnych poziomów wcięć.
 - **Jupyter** – pozwala otwierać, edytować i uruchamiać notebooki Jupyter (`.ipynb`) bezpośrednio w VS Code. Bardzo wygodne przy prototypowaniu, analizie danych czy testowaniu fragmentów kodu.
 
-# Inne przydatne rozszerzenia Visual Studio
+## Inne przydatne rozszerzenia Visual Studio
 
 - **Markdown All in One** – rozszerzenie do edycji Markdown. Dodaje skróty klawiszowe, podgląd na żywo, spisy treści, autouzupełnianie nawiasów i linków. Idealne do dokumentacji i notatek.
 - **YAML** – obsługa plików .yml i .yaml. Dodaje kolorowanie składni, walidację oraz podpowiedzi (np. do Kubernetes, GitHub Actions, Docker Compose).
 - **Makefile Tools** – ułatwia pracę z Makefile. Wykrywa cele (targets), umożliwia ich uruchamianie z poziomu VS Code, integruje się z terminalem.
 
 
-# Mój plik settings.json
+## Mój plik settings.json
 
 Połączony plik `settings.json` z dwóch komputerów:
 

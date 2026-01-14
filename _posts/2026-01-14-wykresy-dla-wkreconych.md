@@ -16,7 +16,7 @@ Udział w tym kursie okazał się najlepszą rzeczą, jaka przydarzyła mi się 
 Dał mi nie tylko konkretną wiedzę, ale też radość z tworzenia.
 Mogłam się **wyżyć kreatywnie**, czego potrzebowałam.
 
-# Moje wykresy zrobione w trakcie kursu
+## Moje wykresy zrobione w trakcie kursu
 
 Kurs składa się z 10 modułów. W każdym z nich jest praca domowa, która zazwyczaj polega na przygotowaniu wykresu omawianego w danej części kursu. 
 Można odtworzyć tutorial krok po kroku albo stworzyć własny wykres. 
@@ -28,7 +28,7 @@ Trzeba samodzielnie przygotować dane do wizualizacji, zrobić krótką analizę
 Dzięki temu każdy wykres jest nie tylko ćwiczeniem technicznym, ale też świadomą decyzją analityczną.
 
 
-## Moduł 1: Wykresy słupkowe
+### Moduł 1: Wykresy słupkowe
 
 W pierwszym module omawiane są wykresy słupkowe i kolumnowe, a także ich bardziej zaawansowane odmiany, takie jak stacked bar chart, split bar chart czy bullet chart. 
 
@@ -38,7 +38,7 @@ W ramach pracy domowej przygotowałam wykres typu split bar chart na danych doty
 [Wykres w programie Datawrapper](https://www.datawrapper.de/_/pILTZ/)
 
 
-## Moduł 2: Wykresy liniowe
+### Moduł 2: Wykresy liniowe
 
 W drugim module skupiamy się na wykresach liniowych oraz ich różnych wariantach, w tym na tzw. small multiples – formie, która od dawna szczególnie mi się podobała. Ten typ wykresów dobrze pokazuje zmiany w czasie i pozwala łatwo porównywać kilka serii danych bez przeładowania jednej wizualizacji.
 
@@ -48,7 +48,7 @@ W tym samym okresie koleżanka poprosiła mnie o pomoc w przygotowaniu jej córk
 [Wykres w Datawrapper](https://www.datawrapper.de/_/56ekD/?v=2)
 
 
-## Moduł 3: Tabele
+### Moduł 3: Tabele
 
 W trzecim module skupiamy się na tabelach oraz ich bardziej zaawansowanych wariantach, takich jak mapy cieplne. Tabela wcale nie musi być „nudna”, a dobrze zaprojektowana potrafi przekazywać informacje równie skutecznie jak wykres.
 
@@ -57,7 +57,7 @@ W ramach pracy domowej przygotowałam dwie mapy cieplne – w Google Sheets – 
 ![Heatmapa urodzenia 2021 1](assets/img/2026-01-14-wykresy-dla-wkreconych/03-urodzenia-2021-1.png)
 ![Heatmapa urodzenia 2021 2](assets/img/2026-01-14-wykresy-dla-wkreconych/03-urodzenia-2021-2.png)
 
-## Moduł 4: Lekkostrawna komunikacja
+### Moduł 4: Lekkostrawna komunikacja
 
 Kolejny moduł poświęcony jest temu, co Klaudia nazwała „lekkostrawną komunikacją”. To podejście przypomina, że nie każdą skalę zjawiska trzeba pokazywać na wykresie. Czasem wystarczy trafne porównanie albo przełożenie abstrakcyjnych jednostek na coś, co znamy z codziennego doświadczenia.
 
@@ -75,7 +75,7 @@ Wytrenowanie modelu GPT-3 pochłonęło około 1,3 GWh energii. To tyle, ile zu�
 
 
 
-## Moduł 5: Części całości
+### Moduł 5: Części całości
 
 W kolejnym module skupiamy się na pokazywaniu części całości. Omawiane są klasyczne wykresy kołowe i pierścieniowe, ale także bardziej rozbudowane formy, takie jak treemap.
 
@@ -87,7 +87,7 @@ Chciałam zrobić coś ciekawszego niż kolejny wykres kołowy, a jednocześnie 
 ![Powierzchnia kontynentów w podziale na kraje](assets/img/2026-01-14-wykresy-dla-wkreconych/05-Countries_by_Area.png)
 [Wykres we Flourish](https://public.flourish.studio/visualisation/24418739/)
 
-## Moduł 6: Rozkład
+### Moduł 6: Rozkład
 
 Szósty moduł poświęcony jest prezentowaniu rozkładu zmiennych. Omawiamy m.in. dot ploty, scatter ploty, range ploty i inne formy, które dobrze pokazują zróżnicowanie danych oraz różnice między obserwacjami.
 
@@ -97,7 +97,7 @@ W ramach pracy domowej przygotowałam porównanie śmiertelności okołoporodowe
 ![Śmiertelność okołoporodowa w 2023](assets/img/2026-01-14-wykresy-dla-wkreconych/06-Smiertelnosc_okoloporodowa_2023.png)
 [Wykres we Flourish](https://public.flourish.studio/visualisation/24708690/)
 
-## Moduł 7: Mapy
+### Moduł 7: Mapy
 
 Siódmy moduł poświęcony jest mapom – mapom symboli oraz kartogramom. Kartogram to mapa, na której intensywność zjawiska pokazana jest za pomocą koloru. To bardzo wdzięczny temat i jeden z tych modułów, które dają szybki efekt „wow”. Po raz pierwszy samodzielnie tworzyłam mapy w podziale administracyjnym i geograficznym i byłam zaskoczona, jak łatwe jest to we współczesnych narzędziach. 
 
@@ -106,7 +106,7 @@ Ponieważ w tym okresie intensywnie szukałam pracy, przygotowałam kartogram po
 ![Stopa bezrobocia w Polsce w czerwcu 2025](assets/img/2026-01-14-wykresy-dla-wkreconych/07-stopa-bezrobocia-w-polsce-w-czerwcu-2025-roku.png)
 [Wykres w Datawrapper](https://www.datawrapper.de/_/jXF7f/)
 
-## Moduł 8: Inne wykresy
+### Moduł 8: Inne wykresy
 
 Ósmy moduł to zbiór różnych, mniej oczywistych typów wykresów. Tym razem chciałam zrobić coś bardziej ambitnego i odejść od tematów okołoporodowych oraz ogólnych analiz.
 
@@ -117,7 +117,7 @@ Praca nad tym wykresem była bardzo ciekawym doświadczeniem. Wymagała wielu it
 ![Ekstraklasa 2024/2025](assets/img/2026-01-14-wykresy-dla-wkreconych/08-ekstraklasa-2024-2025.png)
 [Wykres w Datawrapper](https://www.datawrapper.de/_/SUu2v/)
 
-## Moduł 9: Eksperymenty
+### Moduł 9: Eksperymenty
 
 Dziewiąty moduł to przestrzeń na eksperymenty – animacje i inne nietypowe formy prezentacji danych. W ramach pracy domowej przygotowałam animację typu bar chart race, pokazującą zmiany PKB Polski i innych krajów regionu w latach 1990–2024.
 
@@ -125,7 +125,7 @@ Dziewiąty moduł to przestrzeń na eksperymenty – animacje i inne nietypowe f
 
 [Prezentacja we Flourish](https://public.flourish.studio/visualisation/25237524/)
 
-## Moduł 10: Prezentacje
+### Moduł 10: Prezentacje
 
 Dziesiąty moduł to zebranie wszystkiego w całość – przygotowanie infografiki, prezentacji albo dashboardu.
 
@@ -143,7 +143,7 @@ To zadanie wymagało bardzo dużo pracy, szczególnie przy moich ograniczonych z
 
 
 
-# Czego się nauczyłam w czasie kursu
+## Czego się nauczyłam w czasie kursu
 
 Odkryłam, że po prostu **lubię tworzyć**. Niekoniecznie muszą to być wykresy. Ważne jest samo robienie czegoś nowego i namacalnego, co ma początek, proces i efekt końcowy.
 
