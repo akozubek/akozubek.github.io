@@ -394,6 +394,22 @@ function nodeClassFor(e){
 //    (wspólne helpery do skalowania/osi + jedna funkcja budująca na wykres)
 // ============================================================
 
+function hoverStrips(xs, series, top, bottom){
+  const step = xs[1] - xs[0];
+  const strip = (x, y0, y1, label) =>
+    `<rect class="datapoint" x="${(x - step/2).toFixed(2)}" y="${y0.toFixed(1)}" width="${step.toFixed(2)}" height="${(y1 - y0).toFixed(1)}" fill="transparent" style="cursor:default" data-label="${label}"/>`;
+  return xs.map((x, i) => {
+    const active = series.filter(s => s.ys[i] != null).sort((a, b) => a.ys[i] - b.ys[i]);   // od góry do dołu
+    let y0 = top, out = '';
+    active.forEach((s, k) => {
+      const y1 = k < active.length - 1 ? (s.ys[i] + active[k + 1].ys[i]) / 2 : bottom;
+      out += strip(x, y0, y1, s.label(i));
+      y0 = y1;
+    });
+    return out;
+  }).join('');
+}
+
 // serie "liniowe": równe odstępy w X, wysokość proporcjonalna do wartości
 function scaleLine(values, {w, h, padL, padR, padT, padB, maxV}){
   const stepX = (w - padL - padR) / (values.length - 1);
@@ -518,7 +534,9 @@ function buildNewArticlesChart(){
   const w=280, h=130, padL=6, padR=6, padT=44, padB=20, gap=1;   // padT 44: miejsce nad słupkami na liczbę i linię przerywaną do komentarza
   const maxV = Math.max(...newArticlesMonthlyVals);
   const bars = scaleBars(newArticlesMonthlyVals, {w, h, padL, padR, padT, padB, gap, maxV});
-  const barsSvg = bars.map(b => `<rect class="bar-rect" x="${b.x.toFixed(1)}" y="${b.y.toFixed(1)}" width="${b.bw.toFixed(1)}" height="${b.bh.toFixed(1)}" fill="${newArticlesHighlightIdx.includes(b.index) ? 'var(--red-aaa)' : 'var(--accent)'}" data-label="${newArticlesMonthlyLabels[b.index]}: ${b.val} nowych artykułów"/>`).join('');
+  const barLabel = i => `${newArticlesMonthlyLabels[i]}, nowe artykuły: ${newArticlesMonthlyVals[i].toLocaleString('pl-PL')}`;
+  const barsSvg = bars.map(b => `<rect class="bar-rect" x="${b.x.toFixed(1)}" y="${b.y.toFixed(1)}" width="${b.bw.toFixed(1)}" height="${b.bh.toFixed(1)}" fill="${newArticlesHighlightIdx.includes(b.index) ? 'var(--red-aaa)' : 'var(--accent)'}" data-label="${barLabel[b.index]}"/>`).join('');
+  const strips = hoverStrips(bars.map(b => b.x + b.bw/2), [{ys: bars.map(b => b.y), label: barLabel}], padT, h - padB + 4);
   const axis = newArticlesMonthlyAxisIdx.map(i => axisLabelSvg((bars[i].x + bars[i].bw/2).toFixed(1), h-4, yearOnly(newArticlesMonthlyLabels[i]))).join('');
 
   const a = newArticlesAnnotation;
@@ -540,7 +558,7 @@ function buildNewArticlesChart(){
     return `<text x="${(b.x + b.bw/2).toFixed(1)}" y="${(b.y - 3).toFixed(1)}" text-anchor="middle" style="pointer-events:none;font-size:7px;font-weight:700;fill:var(--red-aaa);font-family:'Montserrat',sans-serif;">${Math.round(newArticlesMonthlyVals[i] / 1000)} tys.</text>`;
   }).join('');
 
-  return `<svg class="chartsvg" viewBox="0 0 ${w} ${h}">${barsSvg}${axis}${annotation}${sideNote}${barLabels}</svg>`;
+  return `<svg class="chartsvg" viewBox="0 0 ${w} ${h}">${strips}${barsSvg}${axis}${annotation}${sideNote}${barLabels}</svg>`;
 }
 
 
@@ -597,9 +615,14 @@ function buildEditsPeopleVsBotsChart(){
   const botLine    = polylineSegments(botPts, 'var(--red-aaa)', 2);
 
   const peopleDots = peoplePts.filter(p => p.y != null).map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.5" fill="var(--accent)" data-label="${editsMonthlyLabels[p.index]}: ${p.val} edycji (ludzie)"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.5" fill="var(--accent)"/>`).join('');
   const botDots = botPts.filter(p => p.y != null).map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.5" fill="var(--red-aaa)" data-label="${editsMonthlyLabels[p.index]}: ${p.val} edycji (boty)"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.5" fill="var(--red-aaa)"/>`).join('');
+  const fmtN = v => v.toLocaleString('pl-PL');
+  const strips = hoverStrips(peoplePts.map(p => p.x), [
+    {ys: peoplePts.map(p => p.y), label: i => `${editsMonthlyLabels[i]}, użytkownicy: ${fmtN(editsPeopleVals[i])} edycji`},
+    {ys: botPts.map(p => p.y),    label: i => `${editsMonthlyLabels[i]}, boty: ${fmtN(editsBotVals[i])} edycji`},
+  ], 0, h - padB + 4);
 
   const axisIdx = yearAxisIdx(editsMonthlyLabels, 6)
   const axis = axisIdx.map(i => axisLabelSvg(peoplePts[i].x.toFixed(1), h-4, yearOnly(editsMonthlyLabels[i]))).join('');
@@ -612,7 +635,7 @@ function buildEditsPeopleVsBotsChart(){
     `<text x="${(pk.x + pn.dx).toFixed(1)}" y="${(pk.y + pn.dy + i * 9).toFixed(1)}" text-anchor="end" style="pointer-events:none;font-size:7px;font-weight:400;fill:var(--b50);font-family:'Source Serif 4',serif;">${line}</text>`).join('');
 
   return `<svg class="chartsvg" viewBox="0 0 ${w} ${h}">
-    ${peopleLine}${botLine}${peopleDots}${botDots}${peakNote}${peakLabel}${axis}
+    ${peopleLine}${botLine}${peopleDots}${botDots}${peakNote}${strips}${peakLabel}${axis}
   </svg>`;
 }
 
@@ -643,9 +666,13 @@ function buildViewsHumanVsBotChart(){
   const botLine    = polylineSegments(botPts, 'var(--red-aaa)', 2);
 
   const humanDots = humanPts.filter(p => p.y != null).map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="var(--accent)" data-label="${viewsYearlyLabels[p.index]}, użytkownicy: ${p.val.toLocaleString('PL-pl')} mln"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="var(--accent)"/>`).join('');
   const botDots = botPts.filter(p => p.y != null).map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="var(--red-aaa)" data-label="${viewsYearlyLabels[p.index]}, boty: ${p.val.toLocaleString('PL-pl')} mln"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="2.5" fill="var(--red-aaa)"/>`).join('');
+  const strips = hoverStrips(humanPts.map(p => p.x), [
+    {ys: humanPts.map(p => p.y), label: i => `${viewsYearlyLabels[i]}, użytkownicy: ${viewsHumanVals[i].toLocaleString('PL-pl')} mln`},
+    {ys: botPts.map(p => p.y),   label: i => `${viewsYearlyLabels[i]}, boty: ${viewsBotVals[i].toLocaleString('PL-pl')} mln`},
+  ], 0, h - padB + 4);
 
   // podpisy wartości nad wybranymi punktami; przy ostatnim — dopisek ze zmianą procentową względem roku odniesienia
   const refIdx = viewsLabelIdx[0], lastIdx = viewsLabelIdx[viewsLabelIdx.length - 1];
@@ -668,7 +695,7 @@ function buildViewsHumanVsBotChart(){
   const axis = humanPts.map((p,i) => axisLabelSvg(p.x.toFixed(1), h-4, viewsYearlyLabels[i])).join('');
 
   return `<svg class="chartsvg" viewBox="0 0 ${w} ${h}">
-    ${humanLine}${botLine}${humanDots}${botDots}${labels}${axis}
+    ${humanLine}${botLine}${humanDots}${botDots}${labels}${strips}${axis}
   </svg>`;
 }
 
@@ -771,9 +798,13 @@ function buildDesktopMobileChart(){
 
   // małe, widoczne punkty (żeby było widać, że można na nie najechać) + etykieta w tooltipie po najechaniu
   const desktopDots = desktopPts.map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.1" fill="var(--accent)" data-label="Ruch z komputerów, ${desktopMobileLabels[p.index]}: ${roundMln(p.val)} mln"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.1" fill="var(--accent)"/>`).join('');
   const mobileDots = mobilePts.map(p =>
-    `<circle class="datapoint" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.1" fill="var(--red-aaa)" data-label="Ruch z telefonów, ${desktopMobileLabels[p.index]}: ${roundMln(p.val)} mln"/>`).join('');
+    `<circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="1.1" fill="var(--red-aaa)"/>`).join('');
+  const strips = hoverStrips(desktopPts.map(p => p.x), [
+    {ys: desktopPts.map(p => p.y), label: i => `Ruch z komputerów, ${desktopMobileLabels[i]}: ${roundMln(desktopMobileDesktopVals[i])} mln`},
+    {ys: mobilePts.map(p => p.y),  label: i => `Ruch z telefonów, ${desktopMobileLabels[i]}: ${roundMln(desktopMobileMobileVals[i])} mln`},
+  ], 0, h - padB + 4);
 
   const axis = desktopMobileAxisIdx.map(i => axisLabelSvg(desktopPts[i].x.toFixed(1), h-4, yearOnly(desktopMobileLabels[i]))).join('');
 
@@ -806,7 +837,7 @@ function buildDesktopMobileChart(){
   return `<svg class="chartsvg" viewBox="0 0 ${w} ${h}">
     <polyline points="${desktopPoly}" fill="none" stroke="var(--accent)" stroke-width="1.5"/>
     <polyline points="${mobilePoly}" fill="none" stroke="var(--red-aaa)" stroke-width="1.5"/>
-    ${desktopDots}${mobileDots}${annotation}${axis}
+    ${desktopDots}${mobileDots}${annotation}${strips}${axis}
   </svg>`;
 }
 
