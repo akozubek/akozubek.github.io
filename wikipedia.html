@@ -42,6 +42,14 @@
   .legend i{width:10px; height:10px; border-radius:50%; display:inline-block;}
   .legend .li-world i{background:var(--world);}
   .legend .li-wiki i{background:var(--accent);}
+  .legend-hint{display:flex; align-items:center; justify-content:center; gap:6px; margin:0 0 8px; padding:0 12px; text-align:center; font-size:12px; font-weight:500; color:var(--b50);}
+  .legend-hint svg{width:11px; height:11px; flex:none; fill:currentColor;}
+  .legend-hint .hint-touch{display:none;}
+  @media (hover:none){
+	  .legend-hint .hint-hover{display:none;}
+	  .legend-hint span.hint-touch{display:inline;}
+	  .legend-hint svg.hint-touch{display:block;}
+  }
 
   #main{position:relative; margin-top:20px;}
   .spine{position:absolute; left:50%; top:0; width:2px; background:var(--b25); transform:translateX(-1px);}
@@ -84,13 +92,14 @@
   .entry.panel .chart-box .label{font-size:12px; font-weight:700; color:var(--b75); margin-bottom:8px;}
 
   /* chart card internals */
-  .chartsvg{width:100%; height:auto; display:block; overflow:visible;}
+  .chartsvg{width:100%; height:auto; display:block; overflow:visible; touch-action:pan-y pinch-zoom;}  
   .axis-lbl{font-size:8px; fill:var(--b50); font-family:'Montserrat',sans-serif;}
   .datapoint{cursor:pointer;}
   .bar-rect{cursor:pointer; transition:opacity .15s;}
   .bar-rect:hover{opacity:.7;}
   .tooltip{position:absolute; pointer-events:none; background:var(--black); color:#fff; font-size:11px; font-weight:600; padding:4px 8px; border-radius:4px; transform:translate(-50%,-130%); white-space:nowrap; opacity:0; transition:opacity .1s; z-index:10; font-family:'Montserrat',sans-serif;}
   .tooltip.show{opacity:1;}
+  .tooltip.touch{transform:translate(-50%, calc(-100% - 34px));}  
 
   .taglist{list-style:none; margin:0; padding:0;}
   .taglist li{font-size:13.5px; line-height:1.6; padding:4px 0 4px 16px; position:relative; color:var(--b75);}
@@ -125,6 +134,12 @@
   <div class="legend">
     <span class="li-world"><i></i>Wydarzenia na świecie</span>
     <span class="li-wiki"><i></i>Polska Wikipedia</span>
+  </div>
+  <div class="legend-hint">
+    <svg class="hint-hover" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2v18l5-5 4 7 3-1.5-4-7H19z"/></svg>
+    <svg class="hint-touch" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    <span class="hint-hover">Najedź kursorem na wykres, aby zobaczyć dokładne wartości</span>
+    <span class="hint-touch">Dotknij wykresu, aby zobaczyć dokładne wartości</span>
   </div>
 
   <div id="main"></div>
@@ -1041,25 +1056,48 @@ window.addEventListener('resize', () => {
   resizeTimer = setTimeout(layoutTimeline, 150);
 });
 
-// tooltip dla wykresów
+
+// tooltip dla wykresów 
 const tooltip = document.createElement('div');
 tooltip.className = 'tooltip';
 document.body.appendChild(tooltip);
-main.addEventListener('mouseover', (ev)=>{
-  const target = ev.target.closest('.datapoint, .bar-rect');
-  if(!target) return;
+
+const TIP_SELECTOR = '.datapoint, .bar-rect';
+
+// punkt pod wskaźnikiem; przy dotyku wskaźnik jest "przypięty" do elementu, w który palec trafił na początku,
+// więc o aktualny punkt pytamy po współrzędnych (dzięki temu przesuwany palec "skanuje" wykres)
+function tipTargetAt(ev){
+  const el = document.elementFromPoint(ev.clientX, ev.clientY);
+  return el && el.closest ? el.closest(TIP_SELECTOR) : null;
+}
+function hideTip(){ tooltip.classList.remove('show'); }
+function showTip(target, ev){
   tooltip.textContent = target.dataset.label;
+  tooltip.classList.toggle('touch', ev.pointerType !== 'mouse');
   tooltip.classList.add('show');
+  // pozycja pod wskaźnikiem, ale tak, żeby tooltip nie wychodził poza ekran
+  const half = tooltip.offsetWidth / 2 + 6;
+  const minX = window.scrollX + half;
+  const maxX = window.scrollX + document.documentElement.clientWidth - half;
+  tooltip.style.left = Math.min(Math.max(ev.pageX, minX), maxX) + 'px';
+  tooltip.style.top = ev.pageY + 'px';
+}
+
+main.addEventListener('pointermove', (ev) => {
+  const target = tipTargetAt(ev);
+  if(target) showTip(target, ev);
+  else if(ev.pointerType === 'mouse') hideTip();      // mysz: tooltip tylko nad punktem; palec: zostaje do kolejnego dotknięcia
 });
-main.addEventListener('mousemove', (ev)=>{
-  if(tooltip.classList.contains('show')){
-    tooltip.style.left = ev.pageX + 'px';
-    tooltip.style.top = ev.pageY + 'px';
-  }
+main.addEventListener('pointerdown', (ev) => {
+  const target = tipTargetAt(ev);
+  if(target) showTip(target, ev); else hideTip();
 });
-main.addEventListener('mouseout', (ev)=>{
-  if(ev.target.closest('.datapoint, .bar-rect')) tooltip.classList.remove('show');
+main.addEventListener('pointerleave', (ev) => { if(ev.pointerType === 'mouse') hideTip(); });
+main.addEventListener('pointercancel', hideTip);       // przeglądarka przejęła gest (np. przewijanie strony)
+document.addEventListener('pointerdown', (ev) => {     // dotknięcie poza wykresem chowa tooltip
+  if(!ev.target.closest || !ev.target.closest(TIP_SELECTOR)) hideTip();
 });
+window.addEventListener('scroll', hideTip, {passive:true});
 
 // przełącznik palety kolorów
 document.querySelectorAll('.toolbar button').forEach(btn=>{
