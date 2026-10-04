@@ -535,7 +535,7 @@ function buildNewArticlesChart(){
   const maxV = Math.max(...newArticlesMonthlyVals);
   const bars = scaleBars(newArticlesMonthlyVals, {w, h, padL, padR, padT, padB, gap, maxV});
   const barLabel = i => `${newArticlesMonthlyLabels[i]}, nowe artykuły: ${newArticlesMonthlyVals[i].toLocaleString('pl-PL')}`;
-  const barsSvg = bars.map(b => `<rect class="bar-rect" x="${b.x.toFixed(1)}" y="${b.y.toFixed(1)}" width="${b.bw.toFixed(1)}" height="${b.bh.toFixed(1)}" fill="${newArticlesHighlightIdx.includes(b.index) ? 'var(--red-aaa)' : 'var(--accent)'}" data-label="${barLabel[b.index]}"/>`).join('');
+  const barsSvg = bars.map(b => `<rect class="bar-rect" x="${b.x.toFixed(1)}" y="${b.y.toFixed(1)}" width="${b.bw.toFixed(1)}" height="${b.bh.toFixed(1)}" fill="${newArticlesHighlightIdx.includes(b.index) ? 'var(--red-aaa)' : 'var(--accent)'}" data-label="${barLabel(b.index)}"/>`).join('');
   const strips = hoverStrips(bars.map(b => b.x + b.bw/2), [{ys: bars.map(b => b.y), label: barLabel}], padT, h - padB + 4);
   const axis = newArticlesMonthlyAxisIdx.map(i => axisLabelSvg((bars[i].x + bars[i].bw/2).toFixed(1), h-4, yearOnly(newArticlesMonthlyLabels[i]))).join('');
 
